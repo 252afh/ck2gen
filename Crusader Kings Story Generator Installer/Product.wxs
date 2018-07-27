@@ -12,7 +12,7 @@
     <ComponentGroup Id="CK2GenComponents" Directory="INSTALLDIR">
       <Component Id="EXE" Guid="07b88734-09c7-403a-be26-ae73cc195efb">
         <File Id="CrusaderKingsStoryGenExe" Name="CrusaderKingsStoryGen.exe" DiskId="1" Source="CrusaderKingsStoryGen.exe" KeyPath="yes">
-          <Shortcut Id="CrusaderKingsStoryGenStartMenu" Directory="ProgramMenuDir" Name="Crusader King Story Generator" Advertise="yes" />
+          <Shortcut Id="CrusaderKingsStoryGenStartMenu" Directory="ProgramMenuFolder" Name="Crusader King Story Generator" Advertise="yes" />
         </File>
       </Component>
       <Component Id="EXEConfig" Guid="6310fe5b-009b-45aa-9406-8acf27ca3a42">
@@ -20,6 +20,24 @@
       </Component>
       <Component Id="EXEManifest" Guid="2e828918-d22c-4c43-8a54-6c74a45e3f42">
         <File Id="CrusaderKingsStoryGenExeManifest" Name="CrusaderKingsStoryGen.exe.manifest" DiskId="1" Source="CrusaderKingsStoryGen.exe.manifest" />
+      </Component>
+      <Component Id="ColorPickerDLL" Guid="938b55eb-3d3b-4208-8a94-83b5ac53dc11">
+        <File Id="ColorPickerDLL" Name="Cyotek.Windows.Forms.ColorPicker.dll" DiskId="1" Source="Cyotek.Windows.Forms.ColorPicker.dll" />
+      </Component>
+      <Component Id="ColorPickerXML" Guid="1266685e-6424-419f-9dd6-c379f25e9f5a">
+        <File Id="ColorPickerXML" Name="Cyotek.Windows.Forms.ColorPicker.xml" DiskId="1" Source="Cyotek.Windows.Forms.ColorPicker.xml" />
+      </Component>
+      <Component Id="DevILDLL" Guid="8749030e-c773-4f64-a5a6-1501a1a7d06f">
+        <File Id="DevILDLL" Name="DevIL.dll" DiskId="1" Source="DevIL.dll" />
+      </Component>
+      <Component Id="DevILNET2DLL" Guid="aeca2e6b-932b-4683-b5ba-0643fafe7239">
+        <File Id="DevILNET2DLL" Name="DevIL.NET2.dll" DiskId="1" Source="DevIL.NET2.dll" />
+      </Component>
+      <Component Id="ILUDLL" Guid="34bdd8de-44dc-498a-b15c-64b512d31a68">
+        <File Id="ILUDLL" Name="ILU.dll" DiskId="1" Source="ILU.dll" />
+      </Component>
+      <Component Id="LibNoiseDLL" Guid="79c202e8-7505-489d-8b06-de83a5f449ef">
+        <File Id="LibNoiseDLL" Name="LibNoise.dll" DiskId="1" Source="LibNoise.dll" />
       </Component>
     </ComponentGroup>
 
@@ -44,9 +62,12 @@
   </Product>
 
   <Fragment>
+    <Directory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="My Application Name"/>
+    </Directory>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="ck2GenDir" Name="Crusader Kings Story Generator" >
+        <Directory Id="INSTALLDIR" Name="Crusader Kings Story Generator" >
           <Component Id="CK2GenComponents" KeyPath="yes" Guid="64303013-a1fd-42cc-a606-2d79e44e4aaa" Permanent="no" Transitive="no" Win64="no" Location="either"/>
           <Directory Id="LICENSES" Name="Licenses">
             <Component Id="LICENSES" Guid="bde9ca4d-8087-44c3-98af-b26250a5cb8e" KeyPath="yes" Permanent="no" Transitive="no" Win64="no" Location="either" />
